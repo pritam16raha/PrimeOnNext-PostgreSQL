@@ -12,10 +12,11 @@ export const GET = async (req: NextRequest) => {
   if (session) {
     try {
       if (session.user.isAdmin) {
-        const orders = prisma.order.findMany();
+        const orders = await prisma.order.findMany();
         return new NextResponse(JSON.stringify(orders), { status: 200 });
       }
-      const orders = prisma.order.findMany({
+      //if user is not admin, must be normal user
+      const orders = await prisma.order.findMany({
         where:{
             userEmail: session.user.email!
         }
