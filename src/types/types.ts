@@ -41,6 +41,7 @@ export type CartType = {
   totalPrice: number;
 };
 
+//this was for zustand
 export type ActionTypes = {
   addToCart: (item: CartItemType) => void;
   removeFromCart: (item: CartItemType) => void;
