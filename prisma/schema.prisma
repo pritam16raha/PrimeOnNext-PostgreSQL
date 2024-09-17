@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -68,7 +65,7 @@ model Category {
   color     String
   img       String
   slug      String    @unique
-  Product   Product[]
+  products  Product[]
 }
 
 model Product {
@@ -76,11 +73,11 @@ model Product {
   createdAt  DateTime @default(now())
   title      String
   desc       String
-  img        String? //? means optional
+  img        String?
   price      Decimal
   isFeatured Boolean  @default(false)
   options    Json[]
-  category   Category @relation(fields: [catSlug], references: [slug]) //making reation with category table
+  category   Category @relation(fields: [catSlug], references: [slug])
   catSlug    String
 }
 
@@ -90,7 +87,7 @@ model Order {
   price     Decimal
   products  Json[]
   status    String
-  intent_id String?  @unique //stripe id
+  intent_id String?  @unique
   user      User     @relation(fields: [userEmail], references: [email])
   userEmail String
 }
