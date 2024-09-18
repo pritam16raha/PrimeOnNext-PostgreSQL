@@ -8,6 +8,7 @@ import AuthProvider from "@/components/AuthProvider";
 import QueryProvider from "@/components/QueryProvider";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,13 +27,19 @@ export default function RootLayout({
       <body className={inter.className}>
         <AuthProvider>
           <QueryProvider>
-            <div>
-              <Notification />
-              <Navbar />
-              {children}
-              <Footer />
-              <ToastContainer position="bottom-right" theme="dark" autoClose={3000}/>
-            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+              <div>
+                <Notification />
+                <Navbar />
+                {children}
+                <Footer />
+                <ToastContainer
+                  position="bottom-right"
+                  theme="dark"
+                  autoClose={3000}
+                />
+              </div>
+            </Suspense>
           </QueryProvider>
         </AuthProvider>
       </body>
