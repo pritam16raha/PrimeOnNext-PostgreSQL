@@ -40,3 +40,4 @@ PS D:\01_LifeOfADeveloper\08_prizzaUsingPostgreSQL\Client\src\docker> docker com
 In a New terminal -> PS D:\01_LifeOfADeveloper\08_prizzaUsingPostgreSQL\Client> npx prisma studio
 creating prisma model at schema.prisma file -> npx prisma migrate dev
 add name and enter
+*get server side hook/function doesn't work with other platform . only work on vercel
