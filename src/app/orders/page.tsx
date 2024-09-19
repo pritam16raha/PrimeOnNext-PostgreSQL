@@ -1,4 +1,5 @@
 "use client";
+import { BackendDomain } from "@/data";
 import { OrderType } from "@/types/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
@@ -19,7 +20,7 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch("http://localhost:3000/api/orders").then((res) => res.json()),
+      fetch(`${BackendDomain}/api/orders`).then((res) => res.json()),
   });
 
   // console.log("Order data", data)
@@ -29,7 +30,7 @@ const OrdersPage = () => {
 
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) => {
-      return fetch(`http://localhost:3000/api/orders/${id}`, {
+      return fetch(`${BackendDomain}/api/orders/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

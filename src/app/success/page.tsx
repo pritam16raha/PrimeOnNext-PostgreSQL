@@ -1,4 +1,5 @@
 "use client";
+import { BackendDomain } from "@/data";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
@@ -11,7 +12,7 @@ const SuccessPage = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        await fetch(`http://localhost:3000/api/confirm/${payment_intent}`, {
+        await fetch(`${BackendDomain}/api/confirm/${payment_intent}`, {
           method: "PUT",
         });
         setTimeout(() => {

@@ -1,10 +1,11 @@
 // import { featuredProducts } from "@/data";
+import { BackendDomain } from "@/data";
 import { ProductType } from "@/types/types";
 import Image from "next/image";
 import React from "react";
 
 const getProductData = async () => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch(`${BackendDomain}/api/products`, {
     cache: "no-store",
   });
 

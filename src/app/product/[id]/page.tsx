@@ -1,12 +1,13 @@
 import DeleteButton from "@/components/DeleteButton";
 import Price from "@/components/Price";
+import { BackendDomain } from "@/data";
 import { ProductType } from "@/types/types";
 // import { singleProduct } from "@/data";
 import Image from "next/image";
 import React from "react";
 
 const getData = async (id:string) => {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`${BackendDomain}/api/products/${id}`, {
     cache: "no-store",
   });
 

@@ -1,4 +1,5 @@
 "use client";
+import { BackendDomain } from "@/data";
 import { useCartStore } from "@/utils/store";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
@@ -21,7 +22,7 @@ const CartPage = () => {
       router.push("/login");
     } else {
       try {
-        const res = await fetch("http://localhost:3000/api/orders", {
+        const res = await fetch(`${BackendDomain}/api/orders`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

@@ -1,5 +1,6 @@
 "use client";
 
+import { BackendDomain } from "@/data";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -88,7 +89,7 @@ const AddPage = () => {
     try {
       const{ secure_url }= await upload();
       console.log("secure image url is",secure_url)
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch(`${BackendDomain}/api/products`, {
         method: "POST",
         body: JSON.stringify({
           img: secure_url,

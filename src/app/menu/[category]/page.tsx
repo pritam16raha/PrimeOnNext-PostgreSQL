@@ -1,11 +1,12 @@
 // import { pizzas } from "@/data";
+import { BackendDomain } from "@/data";
 import { ProductType } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const getProductData = async (category: string) => {
-  const res = await fetch(`http://localhost:3000/api/products?cat=${category}`, {
+  const res = await fetch(`${BackendDomain}/api/products?cat=${category}`, {
     cache: "no-store",
   });
 

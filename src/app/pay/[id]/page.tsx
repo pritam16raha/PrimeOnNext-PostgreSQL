@@ -1,6 +1,7 @@
 "use client";
 
 import CheckoutForm from "@/components/CheckoutForm";
+import { BackendDomain } from "@/data";
 import { Elements } from "@stripe/react-stripe-js";
 import { StripeElementsOptions, loadStripe } from "@stripe/stripe-js";
 import { useEffect, useState } from "react";
@@ -18,7 +19,7 @@ const PayPage = ({ params }: { params: { id: string } }) => {
     const makeRequest = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/create-intent/${id}`,
+          `${BackendDomain}/api/create-intent/${id}`,
           {
             method: "POST",
           }
