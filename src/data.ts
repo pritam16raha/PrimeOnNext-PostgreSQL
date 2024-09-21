@@ -414,6 +414,6 @@ export const menu: Menu = [
   },
 ];
 
-export const BackendDomain = "https://prime-on-next-postgre-sql.vercel.app";
+ export const BackendDomain = "https://prime-on-next-postgre-sql.vercel.app";
 
-// export const BackendDomain = "https://ecom-backend-pritam16rahas-projects.vercel.app";
+//export const BackendDomain = "http://localhost:3000";
