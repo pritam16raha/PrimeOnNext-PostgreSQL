@@ -11,13 +11,13 @@ const ProfilePage = () => {
       <h1>Prifle Section</h1>
       <div className="gird">
         <div className="flex">
-          <p>Name</p> <span>{user?.name}</span>
+          <p>Name</p> <span>Pritam</span>
         </div>
         <div className='flex'>
-          <p>Email</p> <span>{user?.email}</span>
+          <p>Email</p> <span>rahapritam</span>
         </div>
         <div className='flex'>
-          <p>Is Admin</p> <span>{user?.id}</span>
+          <p>Is Admin</p> <span>nah admin nah</span>
         </div>
       </div>
     </div>
