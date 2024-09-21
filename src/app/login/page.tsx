@@ -42,7 +42,7 @@ const LoginPage = () => {
           </button>
           <button className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md" onClick={() => signIn("github")}>
             <Image
-              src="/google.png"
+              src="/github.png"
               alt=""
               width={20}
               height={20}
