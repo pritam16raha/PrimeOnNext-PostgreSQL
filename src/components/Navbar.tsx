@@ -18,7 +18,9 @@ const Navbar = () => {
         <Link href="/menu">Menu</Link>
         {/* <Link href="/">Contact</Link> */}
         {status === "authenticated" ? (
-          <div></div>
+          <div>
+            <Link href="/">Contact</Link>
+          </div>
         ) : (
           <Link href="/">Contact</Link>
         )}
