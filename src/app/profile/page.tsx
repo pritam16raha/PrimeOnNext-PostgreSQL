@@ -6,6 +6,8 @@ const ProfilePage = () => {
 
     const { data: user } = useSession()
 
+    console.log("user is", user)
+
   return (
     <div>
       <h1>Prifle Section</h1>
