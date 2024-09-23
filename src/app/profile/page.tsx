@@ -9,9 +9,9 @@ const ProfilePage = () => {
     console.log("user is", user)
 
   return (
-    <div>
+    <div className='m-auto max-w-4xl bg-blue-200'>
       <h1>Prifle Section</h1>
-      <div className="gird">
+      <div className="grid">
         <div className="flex">
           <p>Name</p> <span>{user?.user.name}</span>
         </div>
