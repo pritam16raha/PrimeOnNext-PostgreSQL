@@ -9,17 +9,34 @@ const ProfilePage = () => {
     console.log("user is", user)
 
   return (
-    <div className='m-auto max-w-4xl bg-blue-200'>
-      <h1>Prifle Section</h1>
-      <div className="grid">
-        <div className="flex">
-          <p>Name</p> <span>{user?.user.name}</span>
-        </div>
-        <div className='flex'>
-          <p>Email</p> <span>{user?.user.email}</span>
-        </div>
-        <div className='flex'>
-          <p>Phone :</p> <span>Null</span>
+    <div className="min-h-screen bg-gray-100 flex justify-center items-center">
+      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+          User Profile
+        </h2>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">Name:</span>
+            <span className="font-medium text-gray-900">{user?.user.name}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">Email:</span>
+            <span className="font-medium text-gray-900">{user?.user.email}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">Phone:</span>
+            <span className="font-medium text-gray-900">{user?.user.phone}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">Profile Type:</span>
+            <span
+              className={`font-medium ${
+                user?.user.isAdmin ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {user?.user.isAdmin ? "Admin" : "User"}
+            </span>
+          </div>
         </div>
       </div>
     </div>
