@@ -1,12 +1,11 @@
-"use client"
-import { useSession } from 'next-auth/react'
-import React from 'react'
+"use client";
+import { useSession } from "next-auth/react";
+import React from "react";
 
 const ProfilePage = () => {
+  const { data: user } = useSession();
 
-    const { data: user } = useSession()
-
-    console.log("user is", user)
+  console.log("user is", user);
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center">
@@ -16,16 +15,22 @@ const ProfilePage = () => {
         </h2>
         <div className="space-y-4">
           <div className="flex items-center justify-between">
+            <span className="text-gray-600">Profile Image:</span>
+            <img
+              src={user?.user.image}
+              alt="User Profile"
+              className="w-16 h-16 rounded-full object-cover"
+            />
+          </div>
+          <div className="flex items-center justify-between">
             <span className="text-gray-600">Name:</span>
             <span className="font-medium text-gray-900">{user?.user.name}</span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-gray-600">Email:</span>
-            <span className="font-medium text-gray-900">{user?.user.email}</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-gray-600">Phone:</span>
-            <span className="font-medium text-gray-900">{user?.user.phone}</span>
+            <span className="font-medium text-gray-900">
+              {user?.user.email}
+            </span>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-gray-600">Profile Type:</span>
@@ -41,6 +46,6 @@ const ProfilePage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default ProfilePage
+export default ProfilePage;
