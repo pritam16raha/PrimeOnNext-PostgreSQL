@@ -1,5 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import React from "react";
 
 const ProfilePage = () => {
@@ -16,10 +17,12 @@ const ProfilePage = () => {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <span className="text-gray-600">Profile Image:</span>
-            <img
-              src={user?.user.image}
+            <Image
+              src={user?.user.image || "/fallback-image.png"}
               alt="User Profile"
               className="w-16 h-16 rounded-full object-cover"
+              width={64}
+              height={64}
             />
           </div>
           <div className="flex items-center justify-between">
