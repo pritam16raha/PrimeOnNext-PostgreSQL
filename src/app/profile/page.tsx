@@ -39,7 +39,7 @@ const ProfilePage = () => {
             <span className="text-gray-600">Profile Type:</span>
             <span
               className={`font-medium ${
-                user?.user.isAdmin ? "text-green-600" : "text-red-600"
+                user?.user.isAdmin ? "text-green-600" : "text-blue-600"
               }`}
             >
               {user?.user.isAdmin ? "Admin" : "User"}

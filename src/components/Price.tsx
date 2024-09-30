@@ -47,10 +47,10 @@ const Price = ({ product }: { product: ProductType }) => {
           product.options?.map((option, index) => (
             <button
               key={option.title}
-              className="min-w-[6rem] p-2 ring-1 ring-red-400 rounded-md"
+              className="min-w-[6rem] p-2 ring-1 ring-blue-400 rounded-md"
               style={{
                 background: selected === index ? "rgb(248 113 113)" : "white",
-                color: selected === index ? "white" : "red",
+                color: selected === index ? "white" : "blue",
               }}
               onClick={() => setSelected(index)}
             >

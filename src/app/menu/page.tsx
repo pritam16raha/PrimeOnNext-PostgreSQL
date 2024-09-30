@@ -32,7 +32,7 @@ const MenuPage = async () => {
           <div className={`text-${category.color} w-1/2`}>
             <h1 className="uppercase font-bold text-3xl text-green-400">{category.title}</h1>
             <p className="text-sm my-8 text-white">{category.desc}</p>
-            <button className={`hidden 2xl:block bg-${category.color} text-${category.color === "black" ? "white" : "red-500"} py-2 px-4 rounded-md`}>Explore</button>
+            <button className={`hidden 2xl:block bg-${category.color} text-${category.color === "black" ? "white" : "blue-500"} py-2 px-4 rounded-md`}>Explore</button>
           </div>
         </Link>
       ))}

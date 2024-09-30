@@ -21,7 +21,7 @@ const Featured = async () => {
   const featuredProducts:ProductType[] = await getProductData();
 
   return (
-    <div className="w-screen overflow-x-scroll text-red-500">
+    <div className="w-screen overflow-x-scroll text-blue-500">
       {/* WRAPPER */}
       <div className="w-max flex">
         {/* SINGLE ITEM */}
@@ -43,7 +43,7 @@ const Featured = async () => {
               </h1>
               <p className="p-4 2xl:p-8">{item.desc}</p>
               <span className="text-xl font-bold">₹{item.price}</span>
-              <button className="bg-red-500 text-white p-2 rounded-md">
+              <button className="bg-blue-500 text-white p-2 rounded-md">
                 Add to Cart
               </button>
             </div>

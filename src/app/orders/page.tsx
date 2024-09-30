@@ -71,7 +71,7 @@ const OrdersPage = () => {
           {data.map((item: OrderType) => (
             <tr
               className={`${
-                item.status === "Delivered" ? "bg-blue-300" : "bg-red-200"
+                item.status === "Delivered" ? "bg-blue-300" : "bg-blue-200"
               }`}
               key={item.id}
             >
@@ -91,7 +91,7 @@ const OrdersPage = () => {
                   >
                     <input
                       placeholder={item.status}
-                      className="p-2 ring-1 ring-red-100 rounded-md"
+                      className="p-2 ring-1 ring-blue-100 rounded-md"
                     />
                     <button className="bg-purple-400 p-2 rounded-full">
                       <Image src="/edit.png" alt="" width={20} height={20} />
